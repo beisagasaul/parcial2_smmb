@@ -26,7 +26,8 @@ constructor(
       sinopsis: createSeriesDto.sinopsis.trim(),
       director: createSeriesDto.director.trim(),
       temporada:createSeriesDto.temporada,
-      fechaEstreno:createSeriesDto.fechaEstreno
+      paisOrigen:createSeriesDto.paisOrigin.trim(),
+      fechaEstreno:createSeriesDto.fechaEstreno.trim()
     });
   }
   async findAll(): Promise<Series[]> {

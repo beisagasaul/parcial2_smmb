@@ -12,6 +12,7 @@ const titulo = ref('')
 const sinopsis = ref('')
 const director = ref('')
 const temporada = ref('')
+const paisOrigen = ref('')
 const fechaEstreno = ref('')
 
 const id = router.currentRoute.value.params['id']
@@ -23,6 +24,7 @@ async function editarSerie() {
       sinopsis: sinopsis.value,
       director: director.value,
       temporada: temporada.value,
+      paisOrigen:paisOrigen.value,
       fechaEstreno: fechaEstreno.value
     })
 
@@ -35,6 +37,7 @@ async function getSerie() {
       (sinopsis.value = response.data.sinopsis),
       (director.value = response.data.director),
       (temporada.value = response.data.temporada),
+       (paisOrigen.value = response.data.paisOrigen),
       (fechaEstreno.value = response.data.fechaEstreno)
   })
 }
@@ -67,7 +70,11 @@ onMounted(() => {
     <div class="row">
       <form @submit.prevent="editarSerie">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" v-model="titulo" placeholder="Titulo" required />
+          <input type="text" 
+          class="form-control" 
+          v-model="titulo" 
+          placeholder="Titulo"
+           required />
           <label for="titulo">Título</label>
         </div>
 
@@ -105,6 +112,21 @@ onMounted(() => {
         </div>
 
         <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            v-model="paisOrigen"
+            placeholder="PaisOrigen"
+            required
+          />
+          <label for="paisOrigen">Pais de Origen</label>
+        </div>
+       <!--<div class="form-floating">
+          <Datepicker v-model="fechaEstreno" type="date" />
+          <label for="fechaEstreno">Fecha de Estreno</label>
+        </div> -->
+
+         <div class="form-floating">
           <input
             type="text"
             class="form-control"

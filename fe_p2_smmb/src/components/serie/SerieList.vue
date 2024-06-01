@@ -59,6 +59,7 @@ onMounted(() => {
             <th scope="col">Sinopsis</th>
             <th scope="col">Director</th>
             <th scope="col">Temporada</th>
+            <th scope="col">Pais de Origen</th>
             <th scope="col">Fecha de estreno</th>
             <th scope="col">Acciones</th>
           </tr>
@@ -71,6 +72,7 @@ onMounted(() => {
             <td>{{ serie.sinopsis }}</td>
             <td>{{ serie.director }}</td>
             <td>{{ serie.temporada }}</td>
+             <td>{{ serie.paisOrigen }}</td>
             <td>{{ serie.fechaEstreno }}</td>
 
             <td>

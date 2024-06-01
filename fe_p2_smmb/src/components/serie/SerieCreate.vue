@@ -12,6 +12,7 @@ const titulo = ref('')
 const sinopsis = ref('')
 const director = ref('')
 const temporada = ref('')
+const paisOrigen = ref('')
 const fechaEsteno = ref('')
 
 async function crearSerie() {
@@ -21,6 +22,7 @@ async function crearSerie() {
       sinopsis: sinopsis.value,
       director: director.value,
       temporada: temporada.value,
+      paisOrigen:paisOrigen.value,
       fechaEsteno: fechaEsteno.value
     })
     .then(() => router.push('/series'))
@@ -85,6 +87,16 @@ function goBack() {
             required
           />
           <label for="temporada">Temporada</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            v-model="paisOrigen"
+            placeholder="PaisOrigen"
+            required
+          />
+          <label for="paisOrigen">Pais de Origen</label>
         </div>
 
         <div class="form-floating">

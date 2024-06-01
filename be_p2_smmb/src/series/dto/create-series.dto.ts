@@ -24,9 +24,16 @@ export class CreateSeriesDto {
     @IsNotEmpty({message:'El campo director no deve ser vacio'})
     @IsNumber({}, { message: 'La duración debe ser un número' })
     readonly temporada:number;
+
+    @ApiProperty()
+    @IsNotEmpty({message:'El campo director no deve ser vacio'})
+    @IsString({message:'El campo pais de origen  debe ser de tipo cadena'})
+     @MaxLength(100,{message:"El campo pais de origen  debe ser menor a 100 caracteres"})
+    readonly paisOrigin:string;
+  
   
     
     @ApiProperty({ example: '2024-04-13' })
     @IsNotEmpty({ message: 'El campo fecha de estreno no debe ser vacío' })
-    readonly fechaEstreno:Date;
+    readonly fechaEstreno:string;
 }
